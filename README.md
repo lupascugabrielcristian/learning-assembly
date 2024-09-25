@@ -21,3 +21,16 @@ Compiles to assembly
 ```
 gcc -S program.c
 ```
+
+
+Stack: stores local variables
+Heap: dynamic memory for programmer to allocate
+
+High address
+Stack 
+ ↓
+
+
+ ↑
+Heap
+Low address
