@@ -4,7 +4,7 @@ clang
 
 Just compile the program
 ```
-gccprogram.c -o program
+gcc program.c -o program
 ```
 
 Compile with debug information
@@ -34,3 +34,15 @@ Stack
  ↑
 Heap
 Low address
+
+To get the base address
+1. With readelf (look for entry point address)
+```readelf -a ./work
+```
+2. With gdb (look at Start Addr)
+```
+gdb ./work
+break main
+run
+info proc mappings
+```

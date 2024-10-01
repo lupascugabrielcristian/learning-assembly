@@ -10,17 +10,17 @@ main:
 .LFB0:
 	.cfi_startproc
 	endbr64
-	pushq	%rbp ; Save address of previous stack frame
+	pushq	%rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offet 6, -16
-	movq	%rsp, %rbp ; Address of current stack frame ?? Save the address of current stack into rbp
+	movq	%rsp, %rbp
 	.cfi_def_cfa_register 6
     ; leaq = Load Effective Address 
     ; Computes the address without accessing the memory and stores the address value to rax register
     ; (%rip) = relative addressing - the address of .LC0 is calculated relative to %rip
 	leaq	.LC0(%rip), %rax   ; Load the address from LC0 into rax registry. 
 	movq	%rax, %rdi
-	call	puts@PLT
+	call	puts@PLT    ; Calling print function
 	movl	$0, %eax
 	popq	%rbp
 	.cfi_def_cfa 7, 8
